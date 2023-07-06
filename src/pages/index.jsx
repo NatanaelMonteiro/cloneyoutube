@@ -1,10 +1,29 @@
-import React from "react";
-import { Button } from "@mui/material";
+import { Box, Button, Container, Typography } from "@mui/material";
+
+import Layout from "@/components/Layout";
+
 export default function Home() {
+  const title = "Piratube";
   return (
-    <div>
-      <Button color='primary' variant="contained">Contained</Button>
-      <Button color='secondary' variant="outlined">Contained</Button>
-    </div>
+    <Container maxWidth="lg">
+      <Layout title={title}>
+        <Typography variant="h3" component="h3">
+          {title}
+        </Typography>
+
+        <Box>&nbsp;</Box>
+
+        <Button color="primary" variant="contained">
+          Butaum
+        </Button>
+
+        <Box>&nbsp;</Box>
+
+        <Button color="secondary" variant="outlined">
+          Boitata
+        </Button>
+
+      </Layout>
+    </Container>
   );
 }
