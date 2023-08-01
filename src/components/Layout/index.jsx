@@ -1,5 +1,4 @@
-import theme from "@/pages/theme";
-import { makeStyles } from "@mui/styles";
+import { makeStyles } from "@material-ui/styles";
 import Head from "next/head";
 
 const useStyles = makeStyles((theme) => ({
@@ -17,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 1 auto",
     overflow: "hidden",
     paddingTop: 64,
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up("lg")]: {
       paddingleft: 256,
     },
   },
@@ -33,7 +32,6 @@ const useStyles = makeStyles((theme) => ({
     overflow: "auto",
     height: "100%",
   },
-
 }));
 
 export default function Layout({ children, title }) {
@@ -51,7 +49,7 @@ export default function Layout({ children, title }) {
         <div>navbar</div>
         <div className={classes.weapper}>
           <div className={classes.contenContainer}>
-        <div className={classes.content}>{children}</div>
+            <div className={classes.content}>{children}</div>
           </div>
         </div>
       </div>

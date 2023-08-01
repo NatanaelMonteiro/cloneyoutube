@@ -1,4 +1,4 @@
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Container, Typography } from "@material-ui/core";
 
 import Layout from "@/components/Layout";
 
@@ -22,7 +22,6 @@ export default function Home() {
         <Button color="secondary" variant="outlined">
           Boitata
         </Button>
-
       </Layout>
     </Container>
   );
