@@ -2,6 +2,7 @@ import { makeStyles } from "@material-ui/styles";
 import Head from "next/head";
 
 import Topbar from "./Topbar";
+import NavBar from "./Navbar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -47,7 +48,8 @@ export default function Layout({ children, title }) {
         <title>{title}</title>
       </Head>
       <div className={classes.root}>
-        <Topbar></Topbar>
+        <Topbar />
+        <NavBar />
         <div>navbar</div>
         <div className={classes.weapper}>
           <div className={classes.contenContainer}>

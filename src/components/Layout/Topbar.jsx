@@ -1,10 +1,18 @@
-import { AppBar, Box, Button, Toolbar, makeStyles } from "@material-ui/core";
+import {
+  AppBar,
+  Box,
+  Button,
+  Hidden,
+  Toolbar,
+  makeStyles,
+} from "@material-ui/core";
 import { Paper, InputBase, IconButton } from "@material-ui/core";
 import SearchIcon from "@material-ui/icons/Search";
 import MenuIcon from "@material-ui/icons/Menu";
 import VideoCall from "@material-ui/icons/VideoCall";
 import MoreVert from "@material-ui/icons/MoreVert";
 import Apps from "@material-ui/icons/Apps";
+import { AccountCircle } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -46,20 +54,22 @@ export default function Topbar() {
           <MenuIcon />
           <img src="logo-youtube.png" alt="logo" className={classes.logo} />
         </Box>
-        <Box>
-          <Paper component="form" className={classes.search}>
-            <InputBase
-              flex="1"
-              placeholder="Pesquisar"
-              inputProps={{
-                "aria-label": "search google maps",
-              }}
-            />
-            <IconButton type="submit" className={classes.iconButton}>
-              <SearchIcon />
-            </IconButton>
-          </Paper>
-        </Box>
+        <Hidden mdDown>
+          <Box>
+            <Paper component="form" className={classes.search}>
+              <InputBase
+                flex="1"
+                placeholder="Pesquisar"
+                inputProps={{
+                  "aria-label": "search google maps",
+                }}
+              />
+              <IconButton type="submit" className={classes.iconButton}>
+                <SearchIcon />
+              </IconButton>
+            </Paper>
+          </Box>
+        </Hidden>
         <Box display="flex">
           <IconButton className={classes.icon}>
             <Apps />
@@ -70,9 +80,14 @@ export default function Topbar() {
           <IconButton className={classes.icon}>
             <MoreVert />
           </IconButton>
-          <button color="secondary" variant="outlined">
-            SEARCH
-          </button>
+          <Button
+            color="secondary"
+            variant="outlined"
+            component="a"
+            startIcon={<AccountCircle />}
+          >
+            FAZER LOGIN
+          </Button>
         </Box>
       </Toolbar>
     </AppBar>
